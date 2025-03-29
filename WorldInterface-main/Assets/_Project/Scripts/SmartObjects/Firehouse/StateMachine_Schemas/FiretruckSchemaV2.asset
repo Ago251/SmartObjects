@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d530b54ddb4b07aa3c8a4edb19b1f5, type: 3}
+  m_Name: FiretruckSchemaV2
+  m_EditorClassIdentifier: 
+  StateMachine:
+    States:
+    - rid: 2354289218321907952
+    - rid: 2354289218321907946
+    - rid: 2354289218321907947
+    - rid: 2354289218321907948
+    - rid: 2354289218321907949
+    - rid: 2354289218321907950
+    - rid: 2354289218321907951
+    - rid: 2354289218321907980
+    - rid: 2354289218321907953
+    Transitions:
+    - rid: 2354289218321907954
+    - rid: 2354289218321907955
+    - rid: 2354289218321907956
+    - rid: 2354289218321907957
+    - rid: 2354289218321907958
+    - rid: 2354289218321907959
+    - rid: 2354289218321907960
+    - rid: 2354289218321907961
+    - rid: 2354289218321907962
+    DefaultState: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 2354289218321907946
+      type: {class: SearchTargetState, ns: , asm: Assembly-CSharp}
+      data:
+        _detectionRange: 25
+        _targetType: 0
+        _detectionMask:
+          serializedVersion: 2
+          m_Bits: 2048
+    - rid: 2354289218321907947
+      type: {class: ReachTargetState, ns: , asm: Assembly-CSharp}
+      data:
+        _targetType: 0
+        _stopDistance: 5
+    - rid: 2354289218321907948
+      type: {class: RechargeWaterState, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 2354289218321907949
+      type: {class: SearchTargetState, ns: , asm: Assembly-CSharp}
+      data:
+        _detectionRange: 15
+        _targetType: 1
+        _detectionMask:
+          serializedVersion: 2
+          m_Bits: 8192
+    - rid: 2354289218321907950
+      type: {class: ReachTargetState, ns: , asm: Assembly-CSharp}
+      data:
+        _targetType: 1
+        _stopDistance: 15
+    - rid: 2354289218321907951
+      type: {class: ExtinguishFireState, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 2354289218321907952
+      type: {class: WaitState, ns: , asm: Assembly-CSharp}
+      data:
+        WaitTime: 1
+    - rid: 2354289218321907953
+      type: {class: StopStateMachineState, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 2354289218321907954
+      type: {class: HasEnoughWater, ns: , asm: Assembly-CSharp}
+      data:
+        Start: 0
+        End: 1
+        Priority: 0
+        negate: 1
+    - rid: 2354289218321907955
+      type: {class: HasTargetTransition, ns: , asm: Assembly-CSharp}
+      data:
+        Start: 1
+        End: 0
+        Priority: 0
+        _targetType: 0
+        negate: 1
+    - rid: 2354289218321907956
+      type: {class: HasTargetTransition, ns: , asm: Assembly-CSharp}
+      data:
+        Start: 1
+        End: 2
+        Priority: 0
+        _targetType: 0
+        negate: 0
+    - rid: 2354289218321907957
+      type: {class: DefaultTransition, ns: , asm: Assembly-CSharp}
+      data:
+        Start: 2
+        End: 3
+        Priority: 0
+    - rid: 2354289218321907958
+      type: {class: HasTargetTransition, ns: , asm: Assembly-CSharp}
+      data:
+        Start: 3
+        End: 5
+        Priority: 0
+        _targetType: 1
+        negate: 0
+    - rid: 2354289218321907959
+      type: {class: HasTargetTransition, ns: , asm: Assembly-CSharp}
+      data:
+        Start: 3
+        End: 7
+        Priority: 0
+        _targetType: 1
+        negate: 1
+    - rid: 2354289218321907960
+      type: {class: DefaultTransition, ns: , asm: Assembly-CSharp}
+      data:
+        Start: 5
+        End: 6
+        Priority: 0
+    - rid: 2354289218321907961
+      type: {class: DefaultTransition, ns: , asm: Assembly-CSharp}
+      data:
+        Start: 6
+        End: 7
+        Priority: 0
+    - rid: 2354289218321907962
+      type: {class: DefaultTransition, ns: , asm: Assembly-CSharp}
+      data:
+        Start: 7
+        End: 8
+        Priority: 0
+    - rid: 2354289218321907980
+      type: {class: ReachTargetState, ns: , asm: Assembly-CSharp}
+      data:
+        _targetType: 2
+        _stopDistance: 3

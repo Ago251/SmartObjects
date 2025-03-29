@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6539406771174467513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 75143926725604202}
+  - component: {fileID: 222034234677853734}
+  - component: {fileID: -8881215934324642325}
+  m_Layer: 0
+  m_Name: Car
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &75143926725604202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6539406771174467513}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -40.5, y: 1, z: 69.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2121378645761637962}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &222034234677853734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6539406771174467513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e508a812287f5964db746870c9df092a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxLinearSpeed: 20.69
+  _maxAngularSpeed: 360
+  _radius: 0.5
+  _steering:
+  - rid: 4174199200023838720
+  - rid: 4174199200023838721
+  - rid: 4174199200023838762
+  references:
+    version: 2
+    RefIds:
+    - rid: 4174199200023838720
+      type: {class: GraphMoveBehaviour, ns: , asm: Assembly-CSharp}
+      data:
+        _reachRadius: 1
+        _timeToTarget: 0.1
+        _graph: {fileID: 0}
+        _recalculatePath: 0
+    - rid: 4174199200023838721
+      type: {class: LookWhereYouMoveSteeringBehaviour, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 4174199200023838762
+      type: {class: AvoidAgentSteeringBehaviour, ns: WorldInterface.SmartObject, asm: Assembly-CSharp}
+      data:
+        _neighbourRange: 3
+        _maxAcceleration: 100
+--- !u!114 &-8881215934324642325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6539406771174467513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b3eafd24048d0488de720f83085504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequiredTrait: {fileID: 11400000, guid: 83af46cd8d26e4edf919f17d07923293, type: 2}
+  _fuel: 100
+  _fuelConsumption: 1
+  _minimumFuelAmount: 2
+  _cost: 2
+  _refuelPerSecond: 1
+  _parkingTolerance: 2
+  drivingTime: 0
+  stressIncreasing: 1
+  _currentAgent: {fileID: 0}
+  target: {fileID: 0}
+  _stressLevel: 0
+--- !u!1001 &2117213077631561086
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 75143926725604202}
+    m_Modifications:
+    - target: {fileID: 1740865480142414, guid: 663342408c5e6e24f8e0cb584631c6ad, type: 3}
+      propertyPath: m_Name
+      value: Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 4922170374542132, guid: 663342408c5e6e24f8e0cb584631c6ad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4922170374542132, guid: 663342408c5e6e24f8e0cb584631c6ad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4922170374542132, guid: 663342408c5e6e24f8e0cb584631c6ad, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4922170374542132, guid: 663342408c5e6e24f8e0cb584631c6ad, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4922170374542132, guid: 663342408c5e6e24f8e0cb584631c6ad, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4922170374542132, guid: 663342408c5e6e24f8e0cb584631c6ad, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4922170374542132, guid: 663342408c5e6e24f8e0cb584631c6ad, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4922170374542132, guid: 663342408c5e6e24f8e0cb584631c6ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4922170374542132, guid: 663342408c5e6e24f8e0cb584631c6ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4922170374542132, guid: 663342408c5e6e24f8e0cb584631c6ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 663342408c5e6e24f8e0cb584631c6ad, type: 3}
+--- !u!4 &2121378645761637962 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4922170374542132, guid: 663342408c5e6e24f8e0cb584631c6ad, type: 3}
+  m_PrefabInstance: {fileID: 2117213077631561086}
+  m_PrefabAsset: {fileID: 0}

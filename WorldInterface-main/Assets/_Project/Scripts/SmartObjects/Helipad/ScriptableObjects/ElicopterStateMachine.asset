@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d530b54ddb4b07aa3c8a4edb19b1f5, type: 3}
+  m_Name: ElicopterStateMachine
+  m_EditorClassIdentifier: 
+  StateMachine:
+    States:
+    - rid: 2353022447117139968
+    - rid: 2353022560129777664
+    - rid: 2353022446461517825
+    - rid: 2353022484359675908
+    Transitions:
+    - rid: 2353022447117139969
+    - rid: 2353022618166624305
+    - rid: 2353022560129777665
+    DefaultState: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 2353022446461517825
+      type: {class: WaitState, ns: , asm: Assembly-CSharp}
+      data:
+        WaitTime: 0.2
+    - rid: 2353022447117139968
+      type: {class: TakeOffState, ns: , asm: Assembly-CSharp}
+      data:
+        TakeOffSpeed: 10
+    - rid: 2353022447117139969
+      type: {class: HeightReachedTransition, ns: , asm: Assembly-CSharp}
+      data:
+        Start: 0
+        End: 1
+        Priority: 0
+        MaxHeight: 20
+    - rid: 2353022484359675908
+      type: {class: LandingState, ns: , asm: Assembly-CSharp}
+      data:
+        LandingSpeed: 10
+    - rid: 2353022560129777664
+      type: {class: MoveToNextAvailableHelipadState, ns: , asm: Assembly-CSharp}
+      data:
+        AcceptanceRadius: 0.1
+    - rid: 2353022560129777665
+      type: {class: DefaultTransition, ns: , asm: Assembly-CSharp}
+      data:
+        Start: 2
+        End: 3
+        Priority: 0
+    - rid: 2353022618166624305
+      type: {class: DefaultTransition, ns: , asm: Assembly-CSharp}
+      data:
+        Start: 1
+        End: 2
+        Priority: 0
